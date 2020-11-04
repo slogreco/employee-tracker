@@ -25,7 +25,7 @@ function start() {
         .prompt({
             name: "addViewUpdate",
             type: "list",
-            messgae: "Would you like to add, update, or view?",
+            message: "Would you like to add, update, or view?",
             choices: ["ADD", "UPDATE", "VIEW", "EXIT"]
         })
         .then(function (answer) {
@@ -45,7 +45,12 @@ function start() {
 }
 // Add departments, roles, employees
 function add() {
+    inquirer
+        .prompt([
+            {
 
+            }
+        ])
 }
 // Update employee roles
 function update() {
@@ -53,5 +58,33 @@ function update() {
 }
 // View departments, roles, employees
 function view() {
+    inquirer
+        .prompt([
+            {
+                name: "view",
+                type: "list",
+                message: "What would you like to view?",
+                choices: ["Employees", "Departments", "Roles"]
+            }
+        ])
+        .then(function (answer) {
+            if (answer.view === "Employees") {
+                printTable("employee")
+            }
+            else if (answer.view === "Departments") {
+                printTable("department")
+            }
+            else if (answer.view === "Roles") {
+                printTable("employee_role")
+            }
+        });
+}
 
+function printTable(data) {
+    const query = "SELECT * FROM " + data;
+    connection.query(query, function (err, res) {
+        if (err) throw err;
+        console.table(res);
+        start();
+    });
 }
