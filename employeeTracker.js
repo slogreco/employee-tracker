@@ -16,5 +16,42 @@ const connection = mysql.createConnection({
 
 connection.connect(function (err) {
     if (err) throw err;
-
+    start();
 });
+
+
+function start() {
+    inquirer
+        .prompt({
+            name: "addViewUpdate",
+            type: "list",
+            messgae: "Would you like to add, update, or view?",
+            choices: ["ADD", "UPDATE", "VIEW", "EXIT"]
+        })
+        .then(function (answer) {
+            if (answer.addViewUpdate === "ADD") {
+                add();
+            }
+            else if (answer.addViewUpdate === "UPDATE") {
+                update();
+            }
+            else if (answer.addViewUpdate === "VIEW") {
+                view();
+            }
+            else {
+                connection.end();
+            }
+        })
+}
+// Add departments, roles, employees
+function add() {
+
+}
+// Update employee roles
+function update() {
+
+}
+// View departments, roles, employees
+function view() {
+
+}
