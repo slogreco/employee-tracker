@@ -9,7 +9,7 @@ const connection = mysql.createConnection({
     // Your username
     user: "root",
     // Your password
-    password: "N0va!sql",
+    password: "",
     database: "employees_DB"
 });
 

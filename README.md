@@ -5,7 +5,7 @@
 
 <a href= "https://github.com/ + slogreco + / + employee-tracker"> Explore the Repo </a>
 
-<a href= "https:// + slogreco + .github.io/ + employee-tracker"> View Deployment </a>
+<a href= "https://drive.google.com/file/d/1Hb3EE10wffdReoSDw9mG2SzXAsr5FAIP/view"> View Demo </a>
 
 <a href="https://github.com/ + slogreco + / + {answers.repo_name} + /issues">Report Bug/Request Features</a>
 
